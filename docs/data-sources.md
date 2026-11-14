@@ -81,3 +81,9 @@ both public and research presentation layers. The backend seed imports the
 available `manifest.csv` fields and writes `unknown` for fields absent from that
 source; the original `.nc`, `.npz`, `.h5`, and other raw acquisitions stay
 outside Git.
+
+Manually registered originals are stored without alteration under ignored
+`data/raw/<region>/`. Registration requires source, license and
+acquisition/publication date; it records byte size and SHA-256 and extracts CRS
+and bounds where the supported format provides them. Large originals remain
+outside Git.

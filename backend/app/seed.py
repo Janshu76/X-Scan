@@ -42,6 +42,20 @@ def build_snapshot() -> dict[str, Any]:
     catalog = read_json(CATALOG_PATH, {"datasets": []})
     summary = read_json(PACK_SUMMARY, {})
     comparison = read_json(GNSS_PATH, {})
+    dataset_rows = catalog["datasets"]
+    for dataset in dataset_rows:
+        inventory = []
+        for declared in dataset.get("repository_files", []):
+            paths = _files_for_path(declared)
+            if not paths:
+                inventory.append({"path": declared, "status": "missing", "size_bytes": None, "appearance": "Unavailable"})
+            for file_path in paths:
+                inventory.append({
+                    "path": file_path.relative_to(ROOT).as_posix(), "status": "downloaded",
+                    "size_bytes": file_path.stat().st_size,
+                    "appearance": "Mexico Time Machine" if "subsidence" in file_path.as_posix() else "Catalog/context panel",
+                })
+        dataset["files"] = inventory
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "datasets": catalog["datasets"],

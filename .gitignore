@@ -221,6 +221,8 @@ __marimo__/
 
 # Original satellite data is stored outside Git.
 /data/originals/
+/data/raw/
+/data/reference/
 /raw/
 /out/
 **/osm_cache/

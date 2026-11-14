@@ -10,6 +10,7 @@ from pydantic import BaseModel, Field
 
 from backend.app import database
 from backend.app.jobs import enqueue, get_job, list_jobs
+from backend.app.library_api import router as library_router
 
 
 @asynccontextmanager
@@ -20,6 +21,7 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(title="TerraWatch API", version="0.1.0", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["http://127.0.0.1:3000", "http://localhost:3000", "http://127.0.0.1:4173"], allow_credentials=False, allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
+app.include_router(library_router)
 
 
 class JobRequest(BaseModel):

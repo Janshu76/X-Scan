@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T20:40:26.835974+00:00",
+  "generated_at": "2026-11-14T21:17:48.620685+00:00",
   "datasets": [
     {
       "id": "mexico-city-opera-source",
@@ -16,7 +16,8 @@
       "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
       "repository_files": [],
       "originals_location": "Outside Git: NSAC/raw/disp/*.nc",
-      "processing": "Original acquisitions are not included in this repository."
+      "processing": "Original acquisitions are not included in this repository.",
+      "files": []
     },
     {
       "id": "mexico-city-disp-s1-clips",
@@ -33,7 +34,8 @@
       "license": "Derived from OPERA; source-specific terms apply.",
       "repository_files": [],
       "originals_location": "Outside Git: NSAC/raw/clips/*.npz",
-      "processing": "Intermediate clip files remain outside Git."
+      "processing": "Intermediate clip files remain outside Git.",
+      "files": []
     },
     {
       "id": "mexico-city-opera-adjusted",
@@ -63,6 +65,92 @@
         "LOS is not vertical displacement and is relative to estimated stable ground, not an absolute frame.",
         "Atmospheric correction is incomplete and chained blocks may accumulate error.",
         "The compact point sample is approximate and is not a full-scene pixel statistic."
+      ],
+      "files": [
+        {
+          "path": "data/mexico_city/subsidence_adjusted/summary.json",
+          "status": "downloaded",
+          "size_bytes": 2497,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/timeseries_points.csv",
+          "status": "downloaded",
+          "size_bytes": 62132,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20220327.png",
+          "status": "downloaded",
+          "size_bytes": 18122,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20221005.png",
+          "status": "downloaded",
+          "size_bytes": 100147,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20230415.png",
+          "status": "downloaded",
+          "size_bytes": 119775,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20231024.png",
+          "status": "downloaded",
+          "size_bytes": 149708,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20240421.png",
+          "status": "downloaded",
+          "size_bytes": 169770,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20241018.png",
+          "status": "downloaded",
+          "size_bytes": 186214,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20250416.png",
+          "status": "downloaded",
+          "size_bytes": 193381,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20250808.png",
+          "status": "downloaded",
+          "size_bytes": 206226,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20251106.png",
+          "status": "downloaded",
+          "size_bytes": 207729,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_cumulative_20260216.png",
+          "status": "downloaded",
+          "size_bytes": 212210,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_velocity.png",
+          "status": "downloaded",
+          "size_bytes": 391868,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence_adjusted/overlay_bounds.json",
+          "status": "downloaded",
+          "size_bytes": 671,
+          "appearance": "Mexico Time Machine"
+        }
       ]
     },
     {
@@ -81,7 +169,111 @@
       "repository_files": [
         "data/mexico_city/subsidence/"
       ],
-      "processing": "Kept as the unadjusted provenance pack; it is not the displayed app data. The adjusted pack is derived using the stable-ground assumption described above."
+      "processing": "Kept as the unadjusted provenance pack; it is not the displayed app data. The adjusted pack is derived using the stable-ground assumption described above.",
+      "files": [
+        {
+          "path": "data/mexico_city/subsidence/cumulative_los_cm_90m.tif",
+          "status": "downloaded",
+          "size_bytes": 6260320,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_bounds.json",
+          "status": "downloaded",
+          "size_bytes": 671,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20220327.png",
+          "status": "downloaded",
+          "size_bytes": 18122,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20221005.png",
+          "status": "downloaded",
+          "size_bytes": 127530,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20230415.png",
+          "status": "downloaded",
+          "size_bytes": 151719,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20231024.png",
+          "status": "downloaded",
+          "size_bytes": 187361,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20240421.png",
+          "status": "downloaded",
+          "size_bytes": 210595,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20241018.png",
+          "status": "downloaded",
+          "size_bytes": 231040,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20250416.png",
+          "status": "downloaded",
+          "size_bytes": 237146,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20250808.png",
+          "status": "downloaded",
+          "size_bytes": 250819,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20251106.png",
+          "status": "downloaded",
+          "size_bytes": 251264,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_cumulative_20260216.png",
+          "status": "downloaded",
+          "size_bytes": 253318,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/overlay_velocity.png",
+          "status": "downloaded",
+          "size_bytes": 455431,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/README.md",
+          "status": "downloaded",
+          "size_bytes": 1373,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/summary.json",
+          "status": "downloaded",
+          "size_bytes": 1773,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/timeseries_points.csv",
+          "status": "downloaded",
+          "size_bytes": 59757,
+          "appearance": "Mexico Time Machine"
+        },
+        {
+          "path": "data/mexico_city/subsidence/velocity_los_cm_per_year.tif",
+          "status": "downloaded",
+          "size_bytes": 5747296,
+          "appearance": "Mexico Time Machine"
+        }
+      ]
     },
     {
       "id": "mexico-city-aoi",
@@ -95,7 +287,15 @@
       "repository_files": [
         "data/mexico_city/aoi.geojson"
       ],
-      "processing": "Displayed as the study area outline."
+      "processing": "Displayed as the study area outline.",
+      "files": [
+        {
+          "path": "data/mexico_city/aoi.geojson",
+          "status": "downloaded",
+          "size_bytes": 352,
+          "appearance": "Catalog/context panel"
+        }
+      ]
     },
     {
       "id": "mexico-city-context",
@@ -113,7 +313,39 @@
         "data/mexico_city/context/dem_info.json",
         "data/mexico_city/context/manifest.csv"
       ],
-      "processing": "Two quiet GNSS stations were used only for an independent adjustment check; three stations are compared in the available v2 summary. GNSS vertical and InSAR LOS rates are different measurements; comparison is approximate. gnss_vs_insar_v3.json is NOT ADDED, so the UI falls back to v2."
+      "processing": "Two quiet GNSS stations were used only for an independent adjustment check; three stations are compared in the available v2 summary. GNSS vertical and InSAR LOS rates are different measurements; comparison is approximate. gnss_vs_insar_v3.json is NOT ADDED, so the UI falls back to v2.",
+      "files": [
+        {
+          "path": "data/mexico_city/context/gnss.json",
+          "status": "downloaded",
+          "size_bytes": 215565,
+          "appearance": "Catalog/context panel"
+        },
+        {
+          "path": "data/mexico_city/context/gnss_vs_insar_v2.json",
+          "status": "downloaded",
+          "size_bytes": 1146,
+          "appearance": "Catalog/context panel"
+        },
+        {
+          "path": "data/mexico_city/context/hillshade_overlay.png",
+          "status": "downloaded",
+          "size_bytes": 2033857,
+          "appearance": "Catalog/context panel"
+        },
+        {
+          "path": "data/mexico_city/context/dem_info.json",
+          "status": "downloaded",
+          "size_bytes": 371,
+          "appearance": "Catalog/context panel"
+        },
+        {
+          "path": "data/mexico_city/context/manifest.csv",
+          "status": "downloaded",
+          "size_bytes": 1340,
+          "appearance": "Catalog/context panel"
+        }
+      ]
     },
     {
       "id": "mexico-city-nisar-search",
@@ -129,7 +361,27 @@
         "data/mexico_city/nisar/pair2_preview.png",
         "data/mexico_city/nisar/aoi_crop_pair2.png"
       ],
-      "processing": "PROVISIONAL SAR lab context only. This search summary and preview are not used to derive Mexico City subsidence values. Large granules and source CSV remain outside this repository."
+      "processing": "PROVISIONAL SAR lab context only. This search summary and preview are not used to derive Mexico City subsidence values. Large granules and source CSV remain outside this repository.",
+      "files": [
+        {
+          "path": "data/mexico_city/nisar/granules_summary.json",
+          "status": "downloaded",
+          "size_bytes": 3084,
+          "appearance": "Catalog/context panel"
+        },
+        {
+          "path": "data/mexico_city/nisar/pair2_preview.png",
+          "status": "downloaded",
+          "size_bytes": 607461,
+          "appearance": "Catalog/context panel"
+        },
+        {
+          "path": "data/mexico_city/nisar/aoi_crop_pair2.png",
+          "status": "downloaded",
+          "size_bytes": 139924,
+          "appearance": "Catalog/context panel"
+        }
+      ]
     },
     {
       "id": "openstreetmap-basemap",
@@ -141,7 +393,8 @@
       "spatial_resolution": "Tile resolution varies with map zoom.",
       "license": "ODbL 1.0; attribution shown on map.",
       "repository_files": [],
-      "processing": "Rendered by MapLibre GL with subdued raster styling."
+      "processing": "Rendered by MapLibre GL with subdued raster styling.",
+      "files": []
     },
     {
       "id": "mexico-city-roads-facilities",
@@ -151,7 +404,8 @@
       "provider": "OpenStreetMap contributors (planned export)",
       "license": "ODbL 1.0; attribution required if added.",
       "repository_files": [],
-      "processing": "NOT ADDED. No exposure counts or lengths are calculated."
+      "processing": "NOT ADDED. No exposure counts or lengths are calculated.",
+      "files": []
     }
   ],
   "findings": [

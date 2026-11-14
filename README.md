@@ -107,3 +107,14 @@ usable with the API offline. When the API is running, `/api/findings`,
 `/api/search-results` read the same SQLite/PostgreSQL records. Findings retain
 their evidence labels, linked datasets and processing runs, limitations, and
 uncertainty.
+
+## Data Library and manual file registration
+
+Open `/data-library` while the API is running to see catalog entries, each
+file's status and size, provenance fields, and where it appears. The page uses
+the static catalog snapshot if the API is stopped. For a manually downloaded
+file, provide a region, source, license, date and supported file. The API
+validates GeoTIFF, GeoJSON, GeoPackage, shapefile ZIP, NetCDF and CSV; extracts
+CRS/bounds where supported; computes SHA-256; rejects duplicate file content;
+and writes original bytes unchanged beneath `data/raw/<region>/` (ignored by
+Git). Registration is available only while the local API is running.
