@@ -25,3 +25,23 @@ nav { display: flex; align-self: stretch; gap: 30px; } nav a { padding-top: 30px
 .methods-shell { max-width: 1120px; }.methods-title { padding: 57px 0 43px; border-bottom: 1px solid var(--line); }.methods-title h1 { font-size: 49px; }.methods-title>p:last-child { max-width: 540px; margin: 13px 0 0; color: #adb4a9; line-height: 1.6; }.methods-section { display: grid; grid-template-columns: 190px 1fr; gap: 40px; padding: 28px 0; border-bottom: 1px solid var(--line); }.methods-index { color: var(--amber); font: 12px Georgia,serif; }.methods-index span { display: block; margin-top: 8px; color: #879187; font: 8px Arial,sans-serif; letter-spacing: .13em; }.methods-section article h2 { margin: 0 0 11px; font: 22px Georgia,serif; font-weight: 400; }.methods-section article p,.methods-section li { max-width: 780px; color: #aeb4aa; font-size: 12px; line-height: 1.75; }.metadata-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 25px; margin-top: 18px; }.metadata-grid div { padding: 12px 0; border-top: 1px solid #303a34; }.metadata-grid span { display: block; margin-bottom: 7px; color: #879386; font-size: 8px; letter-spacing: .12em; }.metadata-grid b { font-size: 10px; font-weight: 400; color: #d1d3c9; }.lineage-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; padding: 16px; border: 1px solid #3b493f; background: #17211b; color: #d8cfb8; font: 12px Georgia,serif; }.lineage-flow b { color: var(--amber); }.references-section ul { padding-left: 18px; }
 @media (max-width: 950px) { .site-shell { padding: 0 22px 24px; }.dashboard-grid { grid-template-columns: 1fr; }.insight-column { grid-template-columns: 1fr 1fr; }.observed-card { grid-row: span 2; }.lower-grid { grid-template-columns: 1fr 1fr; }.next-data-card { grid-column: span 2; } }
 @media (max-width: 640px) { .site-shell { padding: 0 13px 20px; }.topbar { height: 65px; }.topbar nav { gap: 13px; }.topbar nav a { font-size: 10px; padding-top: 27px; }.live-chip { display: none; }.intro-row { padding: 27px 0 18px; }.intro-row h1 { font-size: 36px; }.mission-note { display: none; }.map-comparison { height: 410px; }.layers-card { width: 184px; padding: 8px; }.layer-row { font-size: 8px; }.legend-row { align-items: start; gap: 8px; flex-direction: column; }.legend-row p { font-size: 8px; }.legend i { width: 65px; }.compare-control { flex-wrap: wrap; }.compare-control span { width: 100%; margin: 0; }.insight-column { grid-template-columns: 1fr; }.observed-card { grid-row: auto; }.lower-grid { grid-template-columns: 1fr; }.next-data-card { grid-column: auto; }.site-footer { flex-direction: column; gap: 8px; }.methods-title { padding: 38px 0 30px; }.methods-title h1 { font-size: 39px; }.methods-section { grid-template-columns: 1fr; gap: 13px; padding: 22px 0; }.methods-index span { display: inline; margin: 0 0 0 8px; }.metadata-grid { grid-template-columns: 1fr; } }
+
+.baseline-label strong { max-width: 190px; color: #e7e6df; }
+.legend-row { align-items: center; }
+.legend-scale { flex: 0 0 100px; }
+.legend-scale .legend-bar { position: static; transform: none; }
+.legend-bar { display: block; width: 100%; height: 9px; border: 1px solid #ffffff45; border-radius: 2px; background: linear-gradient(90deg, #b2182b 0%, #f4b49a 25%, #f5f1df 50%, #9dc5ca 75%, #2166ac 100%); }
+.legend-scale .legend-zero { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); color: #aeb5aa; font-size: 8px; }
+.legend-row p { max-width: 290px; text-align: right; }
+.rate-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 13px 0 7px; }
+.rate-metric { min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 9px 8px; border: 1px solid #313d35; background: #17201c; }
+.rate-metric strong { color: #c8d0c5; font: 27px Georgia, serif; font-weight: 400; letter-spacing: -.04em; }
+.rate-metric.headline-rate strong { color: #e3ad76; font-size: 32px; }
+.rate-metric span { color: #aeb3a9; font-size: 8px; line-height: 1.4; }
+.median-note { margin: 0 0 10px; }
+
+@media (max-width: 640px) {
+  .legend-row { align-items: flex-start; flex-direction: column; }
+  .legend-row p { max-width: none; text-align: left; }
+  .legend-scale { flex-basis: 70px; width: 70px; }
+}

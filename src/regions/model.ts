@@ -39,3 +39,8 @@ export function formatDate(yyyymmdd: string) {
   return new Date(`${yyyymmdd.slice(0, 4)}-${yyyymmdd.slice(4, 6)}-${yyyymmdd.slice(6, 8)}T12:00:00Z`)
     .toLocaleDateString("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
 }
+
+export function formatMonthYear(yyyymmdd: string) {
+  return new Date(`${yyyymmdd.slice(0, 4)}-${yyyymmdd.slice(4, 6)}-${yyyymmdd.slice(6, 8)}T12:00:00Z`)
+    .toLocaleDateString("en", { year: "2-digit", month: "short", timeZone: "UTC" });
+}
