@@ -3,9 +3,11 @@ from __future__ import annotations
 import argparse
 import json
 import time
+import json
 
 from backend.app.database import BACKEND, get_connection, initialize_database
 from backend.app.jobs import utc_now
+from backend.app.acquisition.asf import DownloadManager, selected_products
 
 
 def claim_one() -> dict | None:
@@ -28,6 +30,21 @@ def process_one() -> bool:
     try:
         if job["job_type"] == "noop":
             result = {"accepted": True, "note": "Worker queue is operational."}
+        elif job["job_type"] == "asf_download":
+            payload = json.loads(job["payload_json"])
+            with get_connection() as conn:
+                search = conn.execute("SELECT criteria_json FROM search_results WHERE id = ? AND provider = 'ASF DAAC'", (payload["search_id"],)).fetchone()
+                if not search or json.loads(search["criteria_json"]).get("region_id") != payload["region_id"]:
+                    raise ValueError("search_region_mismatch")
+                products = selected_products(payload["search_id"], payload["product_ids"], conn)
+            results = []
+            manager = DownloadManager()
+            for product in products:
+                def report(progress: dict) -> None:
+                    with get_connection() as conn:
+                        conn.execute("UPDATE jobs SET result_json=? WHERE id=?", (json.dumps({"progress": progress}), job["id"]))
+                results.append(manager.download(region_id=payload["region_id"], product=product, progress=report))
+            result = {"products": results}
         else:
             raise ValueError("unsupported_job_type")
         with get_connection() as conn:
