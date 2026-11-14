@@ -7,7 +7,10 @@
       "status": "external",
       "provider": "NASA/JPL OPERA via ASF DAAC",
       "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
-      "dates": ["2022-03-27", "2026-02-16"],
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
       "spatial_resolution": "30 m",
       "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
       "repository_files": [],
@@ -21,7 +24,10 @@
       "status": "external",
       "provider": "Local processing from NASA/JPL OPERA input",
       "product": "Script 20 clipped source blocks",
-      "dates": ["2022-03-27", "2026-02-16"],
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
       "spatial_resolution": "30 m",
       "license": "Derived from OPERA; source-specific terms apply.",
       "repository_files": [],
@@ -35,7 +41,10 @@
       "status": "displayed",
       "provider": "NASA/JPL OPERA via ASF DAAC",
       "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
-      "dates": ["2022-03-27", "2026-02-16"],
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
       "observation_count": 10,
       "spatial_resolution": "30 m source product; compact time-series sample points",
       "units": "cm LOS relative to estimated stable ground",
@@ -62,10 +71,15 @@
       "status": "provenance",
       "provider": "NASA/JPL OPERA via ASF DAAC",
       "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
-      "dates": ["2022-03-27", "2026-02-16"],
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
       "spatial_resolution": "30 m source product",
       "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
-      "repository_files": ["data/mexico_city/subsidence/"],
+      "repository_files": [
+        "data/mexico_city/subsidence/"
+      ],
       "processing": "Kept as the unadjusted provenance pack; it is not the displayed app data. The adjusted pack is derived using the stable-ground assumption described above."
     },
     {
@@ -77,7 +91,9 @@
       "dates": null,
       "spatial_resolution": null,
       "license": "Not stated in the supplied file.",
-      "repository_files": ["data/mexico_city/aoi.geojson"],
+      "repository_files": [
+        "data/mexico_city/aoi.geojson"
+      ],
       "processing": "Displayed as the study area outline."
     },
     {
@@ -135,6 +151,36 @@
       "license": "ODbL 1.0; attribution required if added.",
       "repository_files": [],
       "processing": "NOT ADDED. No exposure counts or lengths are calculated."
+    },
+    {
+      "id": "assam-draft-aoi",
+      "region": "assam",
+      "name": "Majuli–Jorhat provisional extent",
+      "status": "draft-not-approved",
+      "provider": "TerraWatch project file; Majuli district government context",
+      "product": "Provisional GeoJSON rectangle, not an administrative/flood boundary",
+      "dates": null,
+      "spatial_resolution": null,
+      "license": "Project draft; source page is contextual reference only.",
+      "repository_files": [
+        "data/regions/assam/aoi_draft.geojson"
+      ],
+      "processing": "Draft selection extent [94.05,26.75,94.40,27.18]. No observations or findings."
+    },
+    {
+      "id": "antarctica-draft-aoi",
+      "region": "antarctica",
+      "name": "Pine Island Glacier provisional extent",
+      "status": "draft-not-approved",
+      "provider": "TerraWatch project file; SCAR Antarctic Gazetteer named feature",
+      "product": "Provisional GeoJSON rectangle, not a glacier boundary",
+      "dates": null,
+      "spatial_resolution": null,
+      "license": "Project draft; gazetteer coordinate is a reference.",
+      "repository_files": [
+        "data/regions/antarctica/aoi_draft.geojson"
+      ],
+      "processing": "Draft map extent [-103.5,-76.5,-96.5,-73.5]. No observations or findings."
     }
   ]
 }

@@ -87,3 +87,7 @@ Manually registered originals are stored without alteration under ignored
 acquisition/publication date; it records byte size and SHA-256 and extracts CRS
 and bounds where the supported format provides them. Large originals remain
 outside Git.
+
+## Draft study-area references
+
+The Assam and Pine Island Glacier GeoJSONs are provisional rectangular map/search extents, not administrative or glacier boundaries. Assam context: Majuli district government, https://majuli.assam.gov.in/index.php/about-us/about-district. Pine Island named-feature reference: SCAR Antarctic Gazetteer hosted by Australian Antarctic Data Centre, https://data.aad.gov.au/aadc/gaz/display_name.cfm?gaz_id=130147. These references support the draft location only, not any measurement or interpretation. Both AOIs await user approval; no Assam or Antarctic observations are present.

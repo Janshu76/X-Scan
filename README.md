@@ -118,3 +118,7 @@ validates GeoTIFF, GeoJSON, GeoPackage, shapefile ZIP, NetCDF and CSV; extracts
 CRS/bounds where supported; computes SHA-256; rejects duplicate file content;
 and writes original bytes unchanged beneath `data/raw/<region>/` (ignored by
 Git). Registration is available only while the local API is running.
+
+## Additional study areas
+
+data/regions/assam/ and data/regions/antarctica/ contain draft AOI polygons for Majuli–Jorhat and Pine Island Glacier. Both are explicitly marked draft, not approved. They are search extents only: no observations, regional statistics, or findings are claimed. Their provisional bounds and source references are in each GeoJSON and NEEDS_YOU.md.

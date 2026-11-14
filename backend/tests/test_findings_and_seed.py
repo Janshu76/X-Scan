@@ -80,3 +80,12 @@ def test_registration_preserves_upload_and_rejects_duplicate(tmp_path, monkeypat
         assert exc.status_code == 409
     else:
         raise AssertionError("duplicate content was accepted")
+
+
+def test_region_aois_are_closed_draft_polygons():
+    for region_id in ("assam", "antarctica"):
+        feature = json.loads((Path(__file__).parents[2] / "data" / "regions" / region_id / "aoi_draft.geojson").read_text(encoding="utf-8"))
+        ring = feature["geometry"]["coordinates"][0]
+        assert feature["properties"]["status"] == "draft, not approved"
+        assert feature["geometry"]["type"] == "Polygon"
+        assert ring[0] == ring[-1]
