@@ -1,0 +1,1 @@
+"""TerraWatch API application."""

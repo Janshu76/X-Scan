@@ -229,6 +229,12 @@ __marimo__/
 *.tenv3
 *.aux.xml
 /public/data/
+/backend/data/*.sqlite*
+/backend/data/*.db*
+/backend/.pytest_tmp/
+/backend/**/__pycache__/
+/backend/.pytest_cache/
+/tsconfig.tsbuildinfo
 /node_modules/
 /.next/
 /.turbo/

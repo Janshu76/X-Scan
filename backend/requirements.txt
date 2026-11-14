@@ -1,0 +1,6 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9
+asf_search>=9,<15
+# Optional for PostgreSQL; SQLite is the no-install development fallback.
+# psycopg[binary]>=3.2,<4

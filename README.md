@@ -59,3 +59,33 @@ The basemap uses OpenStreetMap raster tiles and requires an internet connection
 while the app is open. Roads/facilities exports are **NOT ADDED**. No exposure
 counts, damage assessment, risk score, or forecast is produced. Assam and
 Antarctica are not implemented regions.
+
+## Local API and worker
+
+The frontend remains usable from static files when the API is stopped. The
+FastAPI service and database-backed worker are optional local services; long
+jobs are queued and processed separately from HTTP requests.
+
+```powershell
+# Terminal 1: API
+.\scripts\start-api.ps1
+
+# Terminal 2: worker
+.\scripts\start-worker.ps1
+
+# Health check
+Invoke-RestMethod http://127.0.0.1:8000/api/health
+```
+
+This machine's PostgreSQL 18 service responds on localhost, but the configured
+system Python 3.14 does not have `psycopg` installed and no `psql` client was
+available. The backend therefore uses its SQLite development fallback at
+`backend/data/terrawatch.sqlite3`; this database is local and gitignored. A
+`DATABASE_URL` value in ignored `.env` can select PostgreSQL when a compatible
+driver is installed and the connection/PostGIS extension succeeds. Failure to
+connect or initialize PostgreSQL falls back to SQLite and is reported by the
+health endpoint without printing connection details.
+
+Copy `.env.example` to `.env` for local settings. `EARTHDATA_TOKEN` is read by
+the backend only; it is never returned by the API or sent to frontend code.
+No live ASF requests or downloads are performed during app startup.
