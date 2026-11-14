@@ -233,3 +233,62 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .nisar-preview-row { display: flex; gap: 7px; margin-top: 10px; }
 .nisar-preview-row img { width: calc(50% - 4px); height: 90px; object-fit: cover; border: 1px solid #39483f; }
 @media (max-width: 640px) { .context-evidence-grid { grid-template-columns: 1fr; } }
+
+.view-mode-selector { display: inline-flex; flex: 0 0 auto; gap: 3px; padding: 3px; border: 1px solid #34445b; border-radius: 999px; background: #101929; }
+.view-mode-selector button { border: 0; border-radius: 999px; padding: 7px 10px; color: #aab8cc; background: transparent; font-size: 9px; cursor: pointer; }
+.view-mode-selector button[aria-pressed="true"] { color: #09111c; background: #e3b77f; }
+.phase-home-hero { display: grid; grid-template-columns: minmax(280px,.8fr) minmax(380px,1.2fr); align-items: center; gap: 32px; min-height: 440px; padding: 32px 0 22px; }
+.phase-home-hero h1,.research-home-head h1,.phase-region-intro h1 { margin: 12px 0; color: #f1eee5; font: clamp(44px,6vw,76px)/.98 Georgia,serif; font-weight: 400; letter-spacing: -.045em; }
+.phase-home-hero h1 em { color: #e4b47b; font-weight: 400; }
+.phase-home-hero .dek { max-width: 510px; color: #b6c1d0; font-size: 13px; line-height: 1.7; }
+.phase-primary-link { display: inline-block; margin-top: 12px; padding: 11px 15px; border: 1px solid #aa835a; color: #f0d3a9; background: #192234; font-size: 10px; text-decoration: none; }
+.world-map-wrap { position: relative; overflow: hidden; min-height: 360px; border: 1px solid #35455f; background: radial-gradient(ellipse,#1c2e43,#101827 72%); }
+.world-map { position: absolute; inset: 0; min-height: 360px; }
+.map-overline { position: absolute; z-index: 1; top: 13px; left: 14px; display: grid; gap: 4px; padding: 9px 11px; border: 1px solid #53627a; background: #0d1523e8; pointer-events: none; }
+.map-overline b { color: #e5be89; font-size: 8px; letter-spacing: .14em; }
+.map-overline span,.world-map-message { color: #a9b8cc; font-size: 8px; }
+.world-map-message { position: absolute; right: 10px; bottom: 4px; padding: 5px 8px; background: #111a29e8; }
+.phase-section { margin: 20px 0 34px; }
+.phase-section-heading { margin-bottom: 13px; }
+.phase-section-heading>span,.phase-pillars article>span,.phase-about>span { color: #d5ac7a; font-size: 8px; letter-spacing: .14em; }
+.phase-section-heading h2,.phase-pillars h2 { margin: 7px 0; color: #e8e9e1; font: 28px Georgia,serif; font-weight: 400; }
+.phase-section-heading p,.phase-pillars p,.phase-about p { max-width: 720px; color: #aeb8c7; font-size: 10px; line-height: 1.6; }
+.region-card-grid,.phase-story-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 11px; }
+.region-card,.phase-story-card { min-height: 165px; padding: 15px; border: 1px solid #344259; background: linear-gradient(145deg,#172338,#101925); }
+.region-card>span,.phase-story-card>span { color: #a9c1b2; font-size: 7px; letter-spacing: .13em; }
+.region-card h3,.phase-story-card h3 { margin: 10px 0 7px; color: #e6e8e1; font: 19px Georgia,serif; font-weight: 400; }
+.region-card p,.phase-story-card p { min-height: 45px; color: #aeb8c7; font-size: 9px; line-height: 1.55; }
+.region-card a,.phase-story-card a,.phase-about a { color: #e8bf8c; font-size: 9px; }
+.phase-story-card.coming { border-style: dashed; opacity: .88; }
+.evidence-public { color: #94d1ae!important; }
+.evidence-context { color: #9dc9df!important; }
+.evidence-unavailable { color: #d2b584!important; }
+.phase-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.phase-pillars article,.phase-about { padding: 18px; border: 1px solid #35435a; background: #121c2b; }
+.phase-pillars h2 { font-size: 22px; }
+.phase-about { margin: 22px 0; }
+.phase-about p { max-width: 880px; font-size: 12px; }
+.research-home-head { margin: 42px 0 24px; }
+.research-home-head h1 { font-size: clamp(38px,5vw,60px); }
+.research-home-head p,.phase-region-intro>p:last-child { max-width: 740px; color: #aeb8c7; font-size: 11px; line-height: 1.6; }
+.research-shortcuts { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 25px 0; }
+.research-shortcuts a { display: grid; gap: 8px; padding: 15px; border: 1px solid #3b4a60; color: #e0bd8d; text-decoration: none; font: 16px Georgia,serif; }
+.research-shortcuts span { color: #aab6c6; font: 9px Arial,sans-serif; }
+.phase-region-shell>.phase-region-intro { padding: 28px 0 20px; }
+.phase-region-intro h1 { font-size: clamp(40px,5vw,62px); }
+.public-finding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 18px; }
+.public-finding-grid article,.planned-region-panel { padding: 18px; border: 1px solid #3a495e; background: #121c2a; }
+.public-finding-grid h2,.planned-region-panel h2 { margin: 10px 0; color: #e8e9e1; font: 24px Georgia,serif; font-weight: 400; }
+.public-finding-grid p,.planned-region-panel p,.planned-region-panel li { color: #b4becc; font-size: 10px; line-height: 1.65; }
+.public-finding-grid small { color: #9aa8b9; font-size: 9px; line-height: 1.5; }
+.public-research-details { margin: 20px 0; }
+.public-research-details summary { padding: 12px; border: 1px solid #45546a; color: #e4bf8b; cursor: pointer; font-size: 10px; }
+.public-research-details[open] summary { margin-bottom: 12px; }
+.research-summary-strip { display: flex; flex-wrap: wrap; gap: 9px 18px; margin: 0 0 15px; padding: 12px; border: 1px solid #35435a; color: #b8c2d0; background: #111b28; font-size: 8px; }
+.planned-region-panel { margin: 15px 0; }
+.planned-region-panel h3 { color: #e2c293; font: 16px Georgia,serif; font-weight: 400; }
+.planned-region-panel ul { padding-left: 18px; }
+.phase-placeholder { min-height: 80vh; padding-top: 55px; color: #eee; background: #0b1120; }
+.phase-placeholder h1 { margin-top: 30px; font: 44px Georgia,serif; font-weight: 400; }
+@media (max-width: 900px) { .phase-home-hero { grid-template-columns: 1fr; }.world-map-wrap { min-height: 330px; }.phase-pillars { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .view-mode-selector button { padding: 6px 7px; font-size: 8px; }.phase-home-hero { padding-top: 25px; }.region-card-grid,.phase-story-grid,.public-finding-grid,.research-shortcuts { grid-template-columns: 1fr; }.region-card,.phase-story-card { min-height: auto; }.phase-region-shell .topbar nav { gap: 8px; }.phase-region-shell .topbar nav a { font-size: 8px; } }

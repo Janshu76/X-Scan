@@ -7,6 +7,7 @@ import type { MexicoSeries } from "@/regions/model";
 import { formatDate } from "@/regions/model";
 import PublishedContextPanel from "@/regions/mexico_city/PublishedContextPanel";
 import { publishedContext } from "@/regions/mexico_city/publishedContext";
+import { ViewModeSelector } from "@/regions/ViewMode";
 
 const catalog = catalogJson.datasets;
 
@@ -20,7 +21,7 @@ export default function DataMethodsContent() {
     }).then(setSeries).catch((reason: Error) => setError(reason.message));
   }, []);
   return <main className="site-shell methods-shell">
-    <header className="topbar"><Link className="brand" href="/"><span className="brand-mark">T</span><span>TERRAWATCH <i>FIELD NOTES · MEXICO CITY</i></span></Link><nav><Link href="/">Mexico City</Link><Link className="active" href="/data-methods">Data &amp; methods</Link></nav><span className="live-chip"><b/> MEXICO CITY</span></header>
+    <header className="topbar"><Link className="brand" href="/"><span className="brand-mark">T</span><span>TERRAWATCH <i>FIELD NOTES · MEXICO CITY</i></span></Link><nav><Link href="/">Explore</Link><Link href="/data-library">Data Library</Link><Link className="active" href="/data-methods">Data &amp; methods</Link></nav><ViewModeSelector/></header>
     <div className="methods-title"><p className="eyebrow">DATA &amp; METHODS · MEXICO CITY</p><h1>What the map can<br/>and cannot tell us.</h1><p>Provenance, processing, limitations and sources for the current Mexico City observation.</p></div>
     {error && <p className="fetch-error" role="alert">{error}</p>}
     <section className="methods-section"><div className="methods-index">01 <span>DATA CATALOG</span></div><article><h2>Available and pending datasets</h2><div className="catalog-list">{catalog.map((entry) => <div className="catalog-entry" key={entry.id}><div className="catalog-entry-title"><h3>{entry.name}</h3><span className="status-tag">CATALOGUED</span></div><div className="metadata-grid"><div><span>SOURCE</span><b>{entry.provider ?? "Not recorded"}</b></div><div><span>DATES</span><b>{entry.id === "mexico-city-opera-disp-s1" && series ? `${formatDate(series.dates[0])} — ${formatDate(series.dates.at(-1)!)}` : Array.isArray(entry.dates) ? `${entry.dates[0]} — ${entry.dates.at(-1)}` : entry.dates ?? "Not recorded"}</b></div><div><span>PRODUCT</span><b>{entry.product ?? "Not recorded"}</b></div><div><span>RESOLUTION</span><b>{entry.spatial_resolution ?? "Not recorded in the available metadata"}</b></div><div><span>LICENCE</span><b>{entry.license ?? "Not recorded"}</b></div><div><span>PROCESSING</span><b>{entry.processing ?? "Not recorded"}</b></div></div></div>)}</div></article></section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./globals.css";
+import { ViewModeProvider } from "@/regions/ViewMode";
 
 export const metadata: Metadata = {
   title: "TerraWatch · The Sinking City",
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><ViewModeProvider>{children}</ViewModeProvider></body></html>;
 }
