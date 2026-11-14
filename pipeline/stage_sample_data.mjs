@@ -28,6 +28,8 @@ if (!records.length || !dateColumns.length) throw new Error("Adjusted sample pac
 
 const selectedCount = Math.max(1, Math.ceil(records.length * 0.01));
 const mostSubsiding = [...records].sort((a, b) => a.velocity - b.velocity).slice(0, selectedCount);
+const selectedFivePercentCount = Math.max(1, Math.ceil(records.length * 0.05));
+const mostSubsidingFivePercent = [...records].sort((a, b) => a.velocity - b.velocity).slice(0, selectedFivePercentCount);
 const mostNegativeCumulative = [...records].sort((a, b) => a.cumulative.at(-1) - b.cumulative.at(-1))[0];
 const sceneMedian = dateColumns.map(({ index }) => {
   const values = records.map((point) => point.cumulative[dateColumns.findIndex((column) => column.index === index)]).sort((a, b) => a - b);
@@ -48,6 +50,7 @@ const series = {
   color_range_cm: [-summary.colour_limits.cumulative_cm, summary.colour_limits.cumulative_cm],
   valid_pixel_fraction: summary.pixels_valid_in_all_blocks_percent / 100,
   series_fastest_1pct_cm: dateColumns.map((_, index) => mostSubsiding.reduce((sum, point) => sum + point.cumulative[index], 0) / mostSubsiding.length),
+  series_most_sinking_5pct_cm: dateColumns.map((_, index) => mostSubsidingFivePercent.reduce((sum, point) => sum + point.cumulative[index], 0) / mostSubsidingFivePercent.length),
   series_scene_median_cm: sceneMedian,
   mean_rate_cm_per_year_fastest_1pct: mostSubsiding.reduce((sum, point) => sum + point.velocity, 0) / mostSubsiding.length,
   fastest_pixel_lonlat: [mostSubsiding[0].lon, mostSubsiding[0].lat],

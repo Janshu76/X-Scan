@@ -122,3 +122,7 @@ Git). Registration is available only while the local API is running.
 ## Additional study areas
 
 data/regions/assam/ and data/regions/antarctica/ contain draft AOI polygons for Majuli–Jorhat and Pine Island Glacier. Both are explicitly marked draft, not approved. They are search extents only: no observations, regional statistics, or findings are claimed. Their provisional bounds and source references are in each GeoJSON and NEEDS_YOU.md.
+
+## Mexico City map layers
+
+The map can show the small DEM hillshade preview and GNSS station points as contextual layers. These are supporting context, not inputs to the displacement calculation. GNSS vertical motion and InSAR line-of-sight motion are not directly equivalent. Roads and facilities remain NOT ADDED. The chart summarizes the approximate mean cumulative LOS series for the most-sinking 5% of sample points; the headline remains the approximate mean rate of the most-subsiding 1%. NISAR thumbnails are provisional workflow previews and are not displacement results.
