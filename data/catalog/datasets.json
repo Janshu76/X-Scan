@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "id": "mexico-city-opera-disp-s1",
+      "region": "mexico_city",
+      "name": "Mexico City cumulative line-of-sight displacement",
+      "provider": "NASA ASF DAAC",
+      "product": "OPERA L3 DISP-S1, frame 20688, VV",
+      "sensor": "Sentinel-1",
+      "dates": ["20220327", "20221005", "20230415", "20231024", "20240421", "20241018", "20250416", "20250808", "20251106", "20260216"],
+      "units": "cm line-of-sight displacement relative to a reference point",
+      "spatial_resolution": null,
+      "license": "Product-specific redistribution terms not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "repository_files": [
+        "data/samples/mexico_city/series.json",
+        "data/samples/mexico_city/overlay_YYYYMMDD.png",
+        "data/samples/mexico_city/inspection_grid.json"
+      ],
+      "originals_location": "Outside Git: NSAC/raw/disp/*.nc",
+      "processing": "Last product of each reference block chained by summation; atmosphere is not fully corrected; small reference drift between blocks is possible.",
+      "caveats": [
+        "LOS displacement is not vertical displacement.",
+        "Negative values mean motion away from the satellite.",
+        "Masked pixels are transparent.",
+        "Atmospheric delay and reference-point effects may contribute."
+      ]
+    },
+    {
+      "id": "mexico-city-aoi",
+      "region": "mexico_city",
+      "name": "Mexico City study area outline",
+      "provider": "TerraWatch project file",
+      "product": "GeoJSON polygon",
+      "dates": null,
+      "spatial_resolution": null,
+      "license": "Not stated in the supplied file.",
+      "repository_files": ["data/mexico_city/aoi.geojson"],
+      "processing": "Displayed as the study area outline; no additional processing."
+    },
+    {
+      "id": "openstreetmap-basemap",
+      "region": "mexico_city",
+      "name": "OpenStreetMap raster basemap",
+      "provider": "OpenStreetMap contributors",
+      "product": "Live raster map tiles",
+      "dates": "Continuously updated; no fixed acquisition date.",
+      "spatial_resolution": "Tile resolution varies with map zoom.",
+      "license": "ODbL 1.0; attribution shown on map.",
+      "repository_files": [],
+      "processing": "Rendered by MapLibre GL with subdued raster styling."
+    }
+  ]
+}

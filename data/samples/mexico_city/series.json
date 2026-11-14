@@ -1,0 +1,59 @@
+{
+  "area": "Mexico City",
+  "product": "OPERA L3 DISP-S1, frame 20688, VV, chained last product of each reference block",
+  "units": "cm, line of sight, negative = moving away from satellite",
+  "caveat": "Relative to a reference point; atmosphere not fully corrected; blocks are chained by summation.",
+  "dates": [
+    "20220327",
+    "20221005",
+    "20230415",
+    "20231024",
+    "20240421",
+    "20241018",
+    "20250416",
+    "20250808",
+    "20251106",
+    "20260216"
+  ],
+  "bounds_lonlat_west_south_east_north": [
+    -99.30085667822358,
+    19.199731180318853,
+    -98.84971177756906,
+    19.60037686822232
+  ],
+  "color_range_cm": [
+    -65,
+    65
+  ],
+  "valid_pixel_fraction": 0.7527190327786577,
+  "mean_rate_cm_per_year_fastest_1pct": -18.74230861261424,
+  "series_fastest_1pct_cm": [
+    0.0,
+    -10.547139167785645,
+    -19.50946044921875,
+    -32.5782585144043,
+    -42.66852569580078,
+    -51.56428909301758,
+    -58.581336975097656,
+    -66.01158142089844,
+    -68.4425277709961,
+    -72.96800231933594
+  ],
+  "series_scene_median_cm": [
+    0.0,
+    3.044891357421875,
+    5.994415283203125,
+    4.9755096435546875,
+    6.270790100097656,
+    7.554817199707031,
+    12.706565856933594,
+    12.91494369506836,
+    15.21807861328125,
+    14.297080039978027
+  ],
+  "fastest_pixel_lonlat": [
+    -98.96606984082341,
+    19.286013013110363
+  ],
+  "fastest_pixel_final_cm": -120.70350646972656
+}

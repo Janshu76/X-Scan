@@ -218,3 +218,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Original satellite data is stored outside Git.
+/data/originals/
+/raw/
+/out/
+**/osm_cache/
+**/gnss/
+*.nc
+*.tenv3
+*.aux.xml
+/public/data/
+/node_modules/
+/.next/
+/.turbo/
+/.vercel/

@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"name": "mexico_city_aoi", "bbox_wsen": [-99.30, 19.20, -98.85, 19.60]},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-99.30, 19.20], [-98.85, 19.20], [-98.85, 19.60], [-99.30, 19.60], [-99.30, 19.20]]]
+      }
+    }
+  ]
+}

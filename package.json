@@ -1,0 +1,30 @@
+{
+  "name": "terrawatch-mexico-city",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node pipeline/stage_sample_data.mjs",
+    "dev": "next dev",
+    "prebuild": "node pipeline/stage_sample_data.mjs",
+    "build": "next build",
+    "start": "node pipeline/serve_static.mjs",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "maplibre-gl": "^5.6.2",
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.7",
+    "@eslint/eslintrc": "^3.3.1",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "^15.3.4",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.8.3"
+  }
+}
