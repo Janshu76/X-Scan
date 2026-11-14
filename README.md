@@ -126,3 +126,7 @@ data/regions/assam/ and data/regions/antarctica/ contain draft AOI polygons for 
 ## Mexico City map layers
 
 The map can show the small DEM hillshade preview and GNSS station points as contextual layers. These are supporting context, not inputs to the displacement calculation. GNSS vertical motion and InSAR line-of-sight motion are not directly equivalent. Roads and facilities remain NOT ADDED. The chart summarizes the approximate mean cumulative LOS series for the most-sinking 5% of sample points; the headline remains the approximate mean rate of the most-subsiding 1%. NISAR thumbnails are provisional workflow previews and are not displacement results.
+
+## Repository policy check
+
+Before committing, run python scripts/verify_repo.py. It checks indexed Git paths for .env, raw/original directories, forbidden large satellite formats and files above 25 MiB. Large original files stay outside Git. No setup step installs dependencies automatically.

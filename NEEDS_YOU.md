@@ -55,27 +55,49 @@ APPROVED** and reports no regional measurements.
 
 ## 4. ASF live search and small download
 
-Network access was not used for live acquisition. After configuring
-`EARTHDATA_TOKEN` locally (or ASF-supported credentials in your local
-environment), start the API and run a small search first:
+No live ASF request was made. Start the API and worker in two terminals from
+`X-Scan`; the search itself does not need credentials, while a real download
+requires `EARTHDATA_TOKEN` available to the backend process. Set that secret
+using your local secret-management method before starting the API. Do not put
+the value in a command, file, chat, or screenshot.
+
+Terminal 1 (API):
 
 ```powershell
 cd C:\Users\Intel\Desktop\NSAC\X-Scan
 python -m uvicorn backend.app.main:app --reload --port 8000
 ```
 
-In a second PowerShell window, search a bounded, recent Sentinel-1 GRD window
-and cap results at 3:
+Terminal 2 (worker):
 
 ```powershell
-$body = @{region='mexico_city'; collection='SENTINEL1'; product_type='GRD_HD'; start='2025-01-01'; end='2025-01-07'; max_results=3} | ConvertTo-Json
-Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/api/acquisition/search -ContentType 'application/json' -Body $body
+cd C:\Users\Intel\Desktop\NSAC\X-Scan
+python -m backend.app.worker
 ```
 
-Review product IDs and sizes. Select exactly one small product from the returned
-IDs; do not request a batch download until you have confirmed the total size.
-Then use the API's explicit selected-product download action and inspect the
-job history. A live authenticated download was not run by this task.
+Terminal 3: search a short, bounded Sentinel-1 GRD period and inspect product
+IDs and byte sizes. This request only searches; it does not download.
+
+```powershell
+$body = @{ region_id='mexico_city'; collection='sentinel1_grd'; product_type='GRD_HD'; start='2025-01-01'; end='2025-01-07'; max_results=3 } | ConvertTo-Json
+$r = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/api/acquisition/search -ContentType 'application/json' -Body $body
+$r.products | Select-Object product_id, processing_level, size_bytes, start_time, flight_direction
+```
+
+After reviewing the results, select exactly one returned ID and check its
+reported size. Replace `PASTE-RETURNED-ID` below with that ID. The API rejects
+IDs that were not in the named search. This is the explicit confirmation step:
+
+```powershell
+$download = @{ search_id=$r.search_id; region_id='mexico_city'; product_ids=@('PASTE-RETURNED-ID'); confirmed=$true } | ConvertTo-Json
+$job = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8000/api/acquisition/download -ContentType 'application/json' -Body $download
+$job
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/api/jobs/$($job.job_id)"
+```
+
+Poll the final command until status is `succeeded` or `failed`. Downloaded files
+are written to ignored `data/raw/mexico_city/asf/`; the local manifest records
+size and SHA-256. Never request a product whose size you have not reviewed.
 
 ## 5. Manual region data
 
