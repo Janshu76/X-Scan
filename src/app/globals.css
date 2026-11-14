@@ -292,3 +292,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .phase-placeholder h1 { margin-top: 30px; font: 44px Georgia,serif; font-weight: 400; }
 @media (max-width: 900px) { .phase-home-hero { grid-template-columns: 1fr; }.world-map-wrap { min-height: 330px; }.phase-pillars { grid-template-columns: 1fr; } }
 @media (max-width: 700px) { .view-mode-selector button { padding: 6px 7px; font-size: 8px; }.phase-home-hero { padding-top: 25px; }.region-card-grid,.phase-story-grid,.public-finding-grid,.research-shortcuts { grid-template-columns: 1fr; }.region-card,.phase-story-card { min-height: auto; }.phase-region-shell .topbar nav { gap: 8px; }.phase-region-shell .topbar nav a { font-size: 8px; } }
+.shared-evidence { margin: 15px 0; padding: 14px; border: 1px solid #344257; background: #111a28; }
+.shared-evidence-compact { margin-top: 16px; }
+.shared-finding-list { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 8px; margin-top: 11px; }
+.shared-finding { padding: 11px; border: 1px solid #354356; background: #172131; }
+.evidence-label { display: inline-block; padding: 4px 7px; border: 1px solid #657c6e; color: #b6d4bf; font-size: 7px; letter-spacing: .1em; text-transform: uppercase; }
+.evidence-label.evidence-measured,.evidence-label.evidence-observed { border-color: #4f8068; color: #9fd1ae; }
+.evidence-label.evidence-contextual { border-color: #557789; color: #9fd0df; }
+.evidence-label.evidence-possible-explanation { border-color: #9a784e; color: #e0bc88; }
+.evidence-label.evidence-unavailable { border-color: #77704f; color: #d7c898; }
+.shared-finding p { margin: 8px 0; color: #c3cbd5; font-size: 9px; line-height: 1.6; }
+.shared-finding small { display: block; margin-top: 5px; color: #99a5b4; font-size: 8px; line-height: 1.5; }
+.shared-dataset-list { margin-top: 11px; color: #c4cbd2; font-size: 9px; }
+.shared-dataset-list summary { color: #e4bf8b; cursor: pointer; }
+.shared-dataset-list p { padding: 7px; border-bottom: 1px solid #344257; line-height: 1.5; }

@@ -1,6 +1,34 @@
 {
   "datasets": [
     {
+      "id": "mexico-city-opera-source",
+      "region": "mexico_city",
+      "name": "Mexico City original OPERA DISP-S1 acquisitions",
+      "status": "external",
+      "provider": "NASA/JPL OPERA via ASF DAAC",
+      "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
+      "dates": ["2022-03-27", "2026-02-16"],
+      "spatial_resolution": "30 m",
+      "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "repository_files": [],
+      "originals_location": "Outside Git: NSAC/raw/disp/*.nc",
+      "processing": "Original acquisitions are not included in this repository."
+    },
+    {
+      "id": "mexico-city-disp-s1-clips",
+      "region": "mexico_city",
+      "name": "Clipped OPERA DISP-S1 input blocks",
+      "status": "external",
+      "provider": "Local processing from NASA/JPL OPERA input",
+      "product": "Script 20 clipped source blocks",
+      "dates": ["2022-03-27", "2026-02-16"],
+      "spatial_resolution": "30 m",
+      "license": "Derived from OPERA; source-specific terms apply.",
+      "repository_files": [],
+      "originals_location": "Outside Git: NSAC/raw/clips/*.npz",
+      "processing": "Intermediate clip files remain outside Git."
+    },
+    {
       "id": "mexico-city-opera-adjusted",
       "region": "mexico_city",
       "name": "Mexico City adjusted cumulative line-of-sight displacement",

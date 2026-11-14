@@ -7,7 +7,11 @@ const pack = path.join(root, "data", "mexico_city", "subsidence_adjusted");
 const output = path.join(root, "public", "data", "regions", "mexico_city");
 const contextSource = path.join(root, "data", "mexico_city", "context");
 const nisarSource = path.join(root, "data", "mexico_city", "nisar");
+const snapshotPath = path.join(root, "data", "catalog", "phase1-snapshot.json");
 await Promise.all([mkdir(output, { recursive: true }), mkdir(path.join(output, "context"), { recursive: true }), mkdir(path.join(output, "nisar"), { recursive: true })]);
+await mkdir(path.join(root, "public", "data", "terrawatch"), { recursive: true });
+try { await copyFile(snapshotPath, path.join(root, "public", "data", "terrawatch", "phase1-snapshot.json")); }
+catch (error) { if (error.code !== "ENOENT") throw error; }
 
 const summary = JSON.parse(await readFile(path.join(pack, "summary.json"), "utf8"));
 const csv = (await readFile(path.join(pack, "timeseries_points.csv"), "utf8")).trim().split(/\r?\n/);

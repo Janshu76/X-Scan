@@ -89,3 +89,21 @@ health endpoint without printing connection details.
 Copy `.env.example` to `.env` for local settings. `EARTHDATA_TOKEN` is read by
 the backend only; it is never returned by the API or sent to frontend code.
 No live ASF requests or downloads are performed during app startup.
+
+## Shared research data seed
+
+The backend schema is versioned in `backend/migrations/`. Seed the region,
+dataset/file inventory, available source manifest, local NISAR search summary,
+processing chain and evidence-labelled findings from the real catalog and
+adjusted pack with:
+
+```powershell
+python -m backend.app.seed --export data\catalog\phase1-snapshot.json
+```
+
+The static snapshot is staged to `public/data/terrawatch/` and keeps both views
+usable with the API offline. When the API is running, `/api/findings`,
+`/api/datasets`, `/api/manifest`, `/api/processing-runs`, and
+`/api/search-results` read the same SQLite/PostgreSQL records. Findings retain
+their evidence labels, linked datasets and processing runs, limitations, and
+uncertainty.

@@ -1,0 +1,269 @@
+{
+  "generated_at": "2026-11-14T20:40:26.835974+00:00",
+  "datasets": [
+    {
+      "id": "mexico-city-opera-source",
+      "region": "mexico_city",
+      "name": "Mexico City original OPERA DISP-S1 acquisitions",
+      "status": "external",
+      "provider": "NASA/JPL OPERA via ASF DAAC",
+      "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
+      "spatial_resolution": "30 m",
+      "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "repository_files": [],
+      "originals_location": "Outside Git: NSAC/raw/disp/*.nc",
+      "processing": "Original acquisitions are not included in this repository."
+    },
+    {
+      "id": "mexico-city-disp-s1-clips",
+      "region": "mexico_city",
+      "name": "Clipped OPERA DISP-S1 input blocks",
+      "status": "external",
+      "provider": "Local processing from NASA/JPL OPERA input",
+      "product": "Script 20 clipped source blocks",
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
+      "spatial_resolution": "30 m",
+      "license": "Derived from OPERA; source-specific terms apply.",
+      "repository_files": [],
+      "originals_location": "Outside Git: NSAC/raw/clips/*.npz",
+      "processing": "Intermediate clip files remain outside Git."
+    },
+    {
+      "id": "mexico-city-opera-adjusted",
+      "region": "mexico_city",
+      "name": "Mexico City adjusted cumulative line-of-sight displacement",
+      "status": "displayed",
+      "provider": "NASA/JPL OPERA via ASF DAAC",
+      "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
+      "observation_count": 10,
+      "spatial_resolution": "30 m source product; compact time-series sample points",
+      "units": "cm LOS relative to estimated stable ground",
+      "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "repository_files": [
+        "data/mexico_city/subsidence_adjusted/summary.json",
+        "data/mexico_city/subsidence_adjusted/timeseries_points.csv",
+        "data/mexico_city/subsidence_adjusted/overlay_cumulative_YYYYMMDD.png",
+        "data/mexico_city/subsidence_adjusted/overlay_velocity.png",
+        "data/mexico_city/subsidence_adjusted/overlay_bounds.json"
+      ],
+      "processing": "Displayed pack. A uniform 5.75 cm/yr scene-most-common LOS offset was removed from every pixel; cumulative values were adjusted by elapsed time. Headline rate is calculated from the most-subsiding 1% of the compact sample points.",
+      "assumptions_and_caveats": [
+        "Assumes most of the area is stable ground and the offset is uniform; neither is proven.",
+        "LOS is not vertical displacement and is relative to estimated stable ground, not an absolute frame.",
+        "Atmospheric correction is incomplete and chained blocks may accumulate error.",
+        "The compact point sample is approximate and is not a full-scene pixel statistic."
+      ]
+    },
+    {
+      "id": "mexico-city-opera-unadjusted-provenance",
+      "region": "mexico_city",
+      "name": "Mexico City unadjusted OPERA pack",
+      "status": "provenance",
+      "provider": "NASA/JPL OPERA via ASF DAAC",
+      "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
+      "dates": [
+        "2022-03-27",
+        "2026-02-16"
+      ],
+      "spatial_resolution": "30 m source product",
+      "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "repository_files": [
+        "data/mexico_city/subsidence/"
+      ],
+      "processing": "Kept as the unadjusted provenance pack; it is not the displayed app data. The adjusted pack is derived using the stable-ground assumption described above."
+    },
+    {
+      "id": "mexico-city-aoi",
+      "region": "mexico_city",
+      "name": "Mexico City study area outline",
+      "provider": "TerraWatch project file",
+      "product": "GeoJSON polygon",
+      "dates": null,
+      "spatial_resolution": null,
+      "license": "Not stated in the supplied file.",
+      "repository_files": [
+        "data/mexico_city/aoi.geojson"
+      ],
+      "processing": "Displayed as the study area outline."
+    },
+    {
+      "id": "mexico-city-context",
+      "region": "mexico_city",
+      "name": "DEM, GNSS cross-check, and source manifest",
+      "provider": "Copernicus DEM GLO-30; Nevada Geodetic Laboratory; TerraWatch source manifest",
+      "product": "Small context exports, GNSS comparison v2, and hillshade preview",
+      "dates": "DEM release 2021 (source data 2011\u20132015); GNSS periods vary by station",
+      "spatial_resolution": "DEM GLO-30: 30 m; GNSS: station point time series",
+      "license": "Copernicus: credit 'Contains modified Copernicus data'. Nevada Geodetic Laboratory: cite Blewitt et al. 2018.",
+      "repository_files": [
+        "data/mexico_city/context/gnss.json",
+        "data/mexico_city/context/gnss_vs_insar_v2.json",
+        "data/mexico_city/context/hillshade_overlay.png",
+        "data/mexico_city/context/dem_info.json",
+        "data/mexico_city/context/manifest.csv"
+      ],
+      "processing": "Two quiet GNSS stations were used only for an independent adjustment check; three stations are compared in the available v2 summary. GNSS vertical and InSAR LOS rates are different measurements; comparison is approximate. gnss_vs_insar_v3.json is NOT ADDED, so the UI falls back to v2."
+    },
+    {
+      "id": "mexico-city-nisar-search",
+      "region": "mexico_city",
+      "name": "NISAR granule search summary and preview images",
+      "provider": "NASA ASF DAAC",
+      "product": "Compact counts and date ranges from the local NISAR granule search CSV; two preview PNGs",
+      "dates": "Ranges are recorded per product type and flight direction in granules_summary.json",
+      "spatial_resolution": null,
+      "license": "Free and open via ASF DAAC; check NASA citation guidance.",
+      "repository_files": [
+        "data/mexico_city/nisar/granules_summary.json",
+        "data/mexico_city/nisar/pair2_preview.png",
+        "data/mexico_city/nisar/aoi_crop_pair2.png"
+      ],
+      "processing": "PROVISIONAL SAR lab context only. This search summary and preview are not used to derive Mexico City subsidence values. Large granules and source CSV remain outside this repository."
+    },
+    {
+      "id": "openstreetmap-basemap",
+      "region": "mexico_city",
+      "name": "OpenStreetMap raster basemap",
+      "provider": "OpenStreetMap contributors",
+      "product": "Live raster map tiles",
+      "dates": "Continuously updated; no fixed acquisition date.",
+      "spatial_resolution": "Tile resolution varies with map zoom.",
+      "license": "ODbL 1.0; attribution shown on map.",
+      "repository_files": [],
+      "processing": "Rendered by MapLibre GL with subdued raster styling."
+    },
+    {
+      "id": "mexico-city-roads-facilities",
+      "region": "mexico_city",
+      "name": "Roads and facilities",
+      "status": "not-added",
+      "provider": "OpenStreetMap contributors (planned export)",
+      "license": "ODbL 1.0; attribution required if added.",
+      "repository_files": [],
+      "processing": "NOT ADDED. No exposure counts or lengths are calculated."
+    }
+  ],
+  "findings": [
+    {
+      "id": "mexico-adjusted-velocity-distribution",
+      "region_id": "mexico_city",
+      "evidence_label": "Measured",
+      "public_statement": "For the adjusted sampled area (2022-03-27 to 2026-02-16), the 2nd-percentile LOS velocity is -20.84 cm/year. This is a sample-based distribution indicator, not the rate at every location.",
+      "research_statement": "OPERA L3 DISP-S1 adjusted sample summary: p2=-20.84, median=-0.05, p98=1.20 cm/year LOS. Source: OPERA L3 DISP-S1 V1 (NASA/JPL), Sentinel-1 ascending, frame 20688, VV, 30 m.",
+      "dataset_ids": [
+        "mexico-city-opera-adjusted"
+      ],
+      "processing_run_ids": [
+        "mexico-city-script-24"
+      ],
+      "limitations": [
+        "Compact sampled statistic, not a full-scene pixel calculation.",
+        "LOS is not vertical motion."
+      ],
+      "uncertainty": "Relative to estimated stable ground; atmospheric correction is incomplete."
+    },
+    {
+      "id": "mexico-adjusted-sinking-shares",
+      "region_id": "mexico_city",
+      "evidence_label": "Observed",
+      "public_statement": "The adjusted product summary reports 29.5% of valid pixels faster than 3 cm/year LOS and 15.2% faster than 10 cm/year LOS.",
+      "research_statement": "Percent shares are from the supplied adjusted summary and use its valid-pixel mask.",
+      "dataset_ids": [
+        "mexico-city-opera-adjusted"
+      ],
+      "processing_run_ids": [
+        "mexico-city-script-24"
+      ],
+      "limitations": [
+        "These fractions describe the valid mask and are not exposure or damage estimates."
+      ],
+      "uncertainty": "Depends on the adjusted reference and common-valid-pixel mask."
+    },
+    {
+      "id": "mexico-stable-ground-assumption",
+      "region_id": "mexico_city",
+      "evidence_label": "Contextual",
+      "public_statement": "The displayed values are relative to estimated stable ground. The adjustment assumes most of the scene is stable and a uniform offset applies everywhere; this is not proven.",
+      "research_statement": "The adjusted pack subtracted 5.75 cm/year scene-most-common LOS velocity. The stated assumption is: most pixels in the area are stable ground and the offset is uniform over the area.",
+      "dataset_ids": [
+        "mexico-city-opera-adjusted"
+      ],
+      "processing_run_ids": [
+        "mexico-city-script-24"
+      ],
+      "limitations": [
+        "Atmosphere is not fully corrected.",
+        "Chained blocks can accumulate error."
+      ],
+      "uncertainty": "The stable-ground and uniform-offset assumptions are not independently established."
+    },
+    {
+      "id": "mexico-gnss-adjustment-check",
+      "region_id": "mexico_city",
+      "evidence_label": "Contextual",
+      "public_statement": "Two quiet GNSS stations were used only for an independent adjustment check; the available comparison covers 3 stations. It is approximate because GNSS is vertical and InSAR is line of sight.",
+      "research_statement": "GNSS was not used to set the offset. Station coverage and measurement directions differ; interpret as a limited consistency check, not validation.",
+      "dataset_ids": [
+        "mexico-city-context"
+      ],
+      "processing_run_ids": [
+        "mexico-city-script-24"
+      ],
+      "limitations": [
+        "Few stations and uneven period coverage.",
+        "Vertical GNSS and LOS InSAR are not equivalent measurements."
+      ],
+      "uncertainty": "Approximate independent check; not validation of the adjustment."
+    },
+    {
+      "id": "mexico-groundwater-not-tested",
+      "region_id": "mexico_city",
+      "evidence_label": "Possible explanation",
+      "public_statement": "Groundwater extraction is discussed in published research as a possible contributor to ground compaction; this app has no groundwater observations to test that explanation.",
+      "research_statement": "No groundwater-level, pumping, or well dataset is registered for this region. Literature context is not a project measurement.",
+      "dataset_ids": [],
+      "processing_run_ids": [],
+      "limitations": [
+        "Cause attribution is not tested."
+      ],
+      "uncertainty": "Possible explanation only; no local groundwater evidence is available in this project."
+    },
+    {
+      "id": "assam-observations-unavailable",
+      "region_id": "assam",
+      "evidence_label": "Unavailable",
+      "public_statement": "No Assam satellite observations have been added.",
+      "research_statement": "Flood inundation, river migration, erosion and deposition are separate planned analyses; no regional measurement is available.",
+      "dataset_ids": [],
+      "processing_run_ids": [],
+      "limitations": [
+        "Draft AOI is not approved."
+      ],
+      "uncertainty": "No observations available."
+    },
+    {
+      "id": "antarctica-observations-unavailable",
+      "region_id": "antarctica",
+      "evidence_label": "Unavailable",
+      "public_statement": "No Pine Island Glacier observations have been added.",
+      "research_statement": "Ice velocity, shelf extent, elevation and mass balance remain distinct planned measurements; none is available here.",
+      "dataset_ids": [],
+      "processing_run_ids": [],
+      "limitations": [
+        "Draft AOI is not approved."
+      ],
+      "uncertainty": "No observations available."
+    }
+  ]
+}
