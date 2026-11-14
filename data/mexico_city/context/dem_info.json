@@ -1,0 +1,12 @@
+{
+  "product": "Copernicus DEM GLO-30 (DSM)",
+  "bounds_lonlat_west_south_east_north": [
+    -99.30085667822358,
+    19.199688888562754,
+    -98.84971411955692,
+    19.60037674221234
+  ],
+  "elevation_min_m": 2215.630126953125,
+  "elevation_max_m": 3931.730712890625,
+  "note": "Surface model: includes buildings and vegetation. Heights above EGM2008 geoid."
+}

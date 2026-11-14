@@ -1,29 +1,44 @@
 {
   "datasets": [
     {
-      "id": "mexico-city-opera-disp-s1",
+      "id": "mexico-city-opera-adjusted",
       "region": "mexico_city",
-      "name": "Mexico City cumulative line-of-sight displacement",
-      "provider": "NASA ASF DAAC",
-      "product": "OPERA L3 DISP-S1, frame 20688, VV",
-      "sensor": "Sentinel-1",
-      "dates": ["20220327", "20221005", "20230415", "20231024", "20240421", "20241018", "20250416", "20250808", "20251106", "20260216"],
-      "units": "cm line-of-sight displacement relative to a reference point",
-      "spatial_resolution": null,
-      "license": "Product-specific redistribution terms not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "name": "Mexico City adjusted cumulative line-of-sight displacement",
+      "status": "displayed",
+      "provider": "NASA/JPL OPERA via ASF DAAC",
+      "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
+      "dates": ["2022-03-27", "2026-02-16"],
+      "observation_count": 10,
+      "spatial_resolution": "30 m source product; compact time-series sample points",
+      "units": "cm LOS relative to estimated stable ground",
+      "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
       "repository_files": [
-        "data/samples/mexico_city/series.json",
-        "data/samples/mexico_city/overlay_YYYYMMDD.png",
-        "data/samples/mexico_city/inspection_grid.json"
+        "data/mexico_city/subsidence_adjusted/summary.json",
+        "data/mexico_city/subsidence_adjusted/timeseries_points.csv",
+        "data/mexico_city/subsidence_adjusted/overlay_cumulative_YYYYMMDD.png",
+        "data/mexico_city/subsidence_adjusted/overlay_velocity.png",
+        "data/mexico_city/subsidence_adjusted/overlay_bounds.json"
       ],
-      "originals_location": "Outside Git: NSAC/raw/disp/*.nc",
-      "processing": "Last product of each reference block chained by summation; atmosphere is not fully corrected; small reference drift between blocks is possible.",
-      "caveats": [
-        "LOS displacement is not vertical displacement.",
-        "Negative values mean motion away from the satellite.",
-        "Masked pixels are transparent.",
-        "Atmospheric delay and reference-point effects may contribute."
+      "processing": "Displayed pack. A uniform 5.75 cm/yr scene-most-common LOS offset was removed from every pixel; cumulative values were adjusted by elapsed time. Headline rate is calculated from the most-subsiding 1% of the compact sample points.",
+      "assumptions_and_caveats": [
+        "Assumes most of the area is stable ground and the offset is uniform; neither is proven.",
+        "LOS is not vertical displacement and is relative to estimated stable ground, not an absolute frame.",
+        "Atmospheric correction is incomplete and chained blocks may accumulate error.",
+        "The compact point sample is approximate and is not a full-scene pixel statistic."
       ]
+    },
+    {
+      "id": "mexico-city-opera-unadjusted-provenance",
+      "region": "mexico_city",
+      "name": "Mexico City unadjusted OPERA pack",
+      "status": "provenance",
+      "provider": "NASA/JPL OPERA via ASF DAAC",
+      "product": "OPERA L3 DISP-S1 V1, Sentinel-1 ascending, frame 20688, VV",
+      "dates": ["2022-03-27", "2026-02-16"],
+      "spatial_resolution": "30 m source product",
+      "license": "Product-specific redistribution terms are not recorded in the supplied export; verify with NASA ASF DAAC.",
+      "repository_files": ["data/mexico_city/subsidence/"],
+      "processing": "Kept as the unadjusted provenance pack; it is not the displayed app data. The adjusted pack is derived using the stable-ground assumption described above."
     },
     {
       "id": "mexico-city-aoi",
@@ -35,7 +50,41 @@
       "spatial_resolution": null,
       "license": "Not stated in the supplied file.",
       "repository_files": ["data/mexico_city/aoi.geojson"],
-      "processing": "Displayed as the study area outline; no additional processing."
+      "processing": "Displayed as the study area outline."
+    },
+    {
+      "id": "mexico-city-context",
+      "region": "mexico_city",
+      "name": "DEM, GNSS cross-check, and source manifest",
+      "provider": "Copernicus DEM GLO-30; Nevada Geodetic Laboratory; TerraWatch source manifest",
+      "product": "Small context exports, GNSS comparison v2, and hillshade preview",
+      "dates": "DEM release 2021 (source data 2011–2015); GNSS periods vary by station",
+      "spatial_resolution": "DEM GLO-30: 30 m; GNSS: station point time series",
+      "license": "Copernicus: credit 'Contains modified Copernicus data'. Nevada Geodetic Laboratory: cite Blewitt et al. 2018.",
+      "repository_files": [
+        "data/mexico_city/context/gnss.json",
+        "data/mexico_city/context/gnss_vs_insar_v2.json",
+        "data/mexico_city/context/hillshade_overlay.png",
+        "data/mexico_city/context/dem_info.json",
+        "data/mexico_city/context/manifest.csv"
+      ],
+      "processing": "Two quiet GNSS stations were used only for an independent adjustment check; three stations are compared in the available v2 summary. GNSS vertical and InSAR LOS rates are different measurements; comparison is approximate. gnss_vs_insar_v3.json is NOT ADDED, so the UI falls back to v2."
+    },
+    {
+      "id": "mexico-city-nisar-search",
+      "region": "mexico_city",
+      "name": "NISAR granule search summary and preview images",
+      "provider": "NASA ASF DAAC",
+      "product": "Compact counts and date ranges from the local NISAR granule search CSV; two preview PNGs",
+      "dates": "Ranges are recorded per product type and flight direction in granules_summary.json",
+      "spatial_resolution": null,
+      "license": "Free and open via ASF DAAC; check NASA citation guidance.",
+      "repository_files": [
+        "data/mexico_city/nisar/granules_summary.json",
+        "data/mexico_city/nisar/pair2_preview.png",
+        "data/mexico_city/nisar/aoi_crop_pair2.png"
+      ],
+      "processing": "PROVISIONAL SAR lab context only. This search summary and preview are not used to derive Mexico City subsidence values. Large granules and source CSV remain outside this repository."
     },
     {
       "id": "openstreetmap-basemap",
@@ -48,6 +97,16 @@
       "license": "ODbL 1.0; attribution shown on map.",
       "repository_files": [],
       "processing": "Rendered by MapLibre GL with subdued raster styling."
+    },
+    {
+      "id": "mexico-city-roads-facilities",
+      "region": "mexico_city",
+      "name": "Roads and facilities",
+      "status": "not-added",
+      "provider": "OpenStreetMap contributors (planned export)",
+      "license": "ODbL 1.0; attribution required if added.",
+      "repository_files": [],
+      "processing": "NOT ADDED. No exposure counts or lengths are calculated."
     }
   ]
 }

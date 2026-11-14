@@ -1,0 +1,120 @@
+{
+  "source": "ASF DAAC NISAR granule search export",
+  "generated_from": "raw/nisar_granules.csv",
+  "total_granules": 541,
+  "grouping": "Counts and startTime ranges by product type and flight direction",
+  "groups": [
+    {
+      "product_type": "NISAR_L0_PR_RRSD",
+      "direction": "ASCENDING",
+      "count": 32,
+      "date_start": "2025-10-30",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L0_PR_RRSD",
+      "direction": "DESCENDING",
+      "count": 30,
+      "date_start": "2025-11-06",
+      "date_end": "2026-11-13"
+    },
+    {
+      "product_type": "NISAR_L0_UR_RRSD",
+      "direction": "ASCENDING",
+      "count": 1,
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L1_PR_RSLC",
+      "direction": "ASCENDING",
+      "count": 51,
+      "date_start": "2025-10-30",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L1_PR_RSLC",
+      "direction": "DESCENDING",
+      "count": 52,
+      "date_start": "2025-10-25",
+      "date_end": "2026-10-20"
+    },
+    {
+      "product_type": "NISAR_L1_UR_RSLC",
+      "direction": "ASCENDING",
+      "count": 1,
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L2_PR_GCOV",
+      "direction": "ASCENDING",
+      "count": 48,
+      "date_start": "2025-10-30",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L2_PR_GCOV",
+      "direction": "DESCENDING",
+      "count": 49,
+      "date_start": "2025-10-25",
+      "date_end": "2026-10-20"
+    },
+    {
+      "product_type": "NISAR_L2_PR_GSLC",
+      "direction": "ASCENDING",
+      "count": 48,
+      "date_start": "2025-10-30",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L2_PR_GSLC",
+      "direction": "DESCENDING",
+      "count": 47,
+      "date_start": "2025-10-25",
+      "date_end": "2026-10-20"
+    },
+    {
+      "product_type": "NISAR_L2_PR_GUNW",
+      "direction": "ASCENDING",
+      "count": 42,
+      "date_start": "2025-10-30",
+      "date_end": "2026-10-06"
+    },
+    {
+      "product_type": "NISAR_L2_PR_GUNW",
+      "direction": "DESCENDING",
+      "count": 45,
+      "date_start": "2025-10-25",
+      "date_end": "2026-10-08"
+    },
+    {
+      "product_type": "NISAR_L2_UR_GCOV",
+      "direction": "ASCENDING",
+      "count": 1,
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L2_UR_GSLC",
+      "direction": "ASCENDING",
+      "count": 1,
+      "date_start": "2026-11-06",
+      "date_end": "2026-11-06"
+    },
+    {
+      "product_type": "NISAR_L3_PR_SME2",
+      "direction": "ASCENDING",
+      "count": 46,
+      "date_start": "2025-10-30",
+      "date_end": "2026-10-18"
+    },
+    {
+      "product_type": "NISAR_L3_PR_SME2",
+      "direction": "DESCENDING",
+      "count": 47,
+      "date_start": "2025-10-25",
+      "date_end": "2026-10-20"
+    }
+  ]
+}

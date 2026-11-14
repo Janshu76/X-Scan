@@ -1,0 +1,6 @@
+name,source,published_or_acquired,resolution,product_type,licence,file,downloaded_on
+Copernicus DEM GLO-30,ESA / Copernicus via AWS Open Data,2021 release (data 2011-2015),30 m (1 arc-second),"DSM, GeoTIFF","Copernicus DEM licence: free, with attribution 'Contains modified Copernicus data'",dem_mexico_city.tif,2026-11-14
+Copernicus DEM GLO-30,ESA / Copernicus via AWS Open Data,2021 release (data 2011-2015),30 m (1 arc-second),"DSM, GeoTIFF","Copernicus DEM licence: free, with attribution 'Contains modified Copernicus data'",dem_mexico_city.tif,2026-11-14
+GNSS time series,Nevada Geodetic Laboratory (geodesy.unr.edu),"daily, up to present","point measurements, daily",GNSS station position time series (tenv3),Free to use; cite Blewitt et al. 2018,raw/gnss/*.tenv3,2026-11-14
+GNSS time series,Nevada Geodetic Laboratory (geodesy.unr.edu),"daily, up to present","point measurements, daily",GNSS station position time series (tenv3),Free to use; cite Blewitt et al. 2018,raw/gnss/*.tenv3,2026-11-14
+NISAR GUNW previews (3 candidate pairs),ASF DAAC (NISAR L2 GUNW),pairs: DESC 20251118-20251212; DESC 20260716-20260821; ASCE 20251123-20251217,unknown,"preview image, QA summary and QA report only (main product not downloaded)",NISAR data are free and open via ASF DAAC; check NASA citation guidance,raw/nisar_previews/,2026-11-14

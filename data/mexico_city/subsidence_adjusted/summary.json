@@ -1,0 +1,96 @@
+{
+  "source": "OPERA L3 DISP-S1 V1 (NASA/JPL), Sentinel-1 ascending, frame 20688, VV, 30 m",
+  "period": [
+    "2022-03-27",
+    "2026-02-16"
+  ],
+  "dates": [
+    "2022-03-27",
+    "2022-10-05",
+    "2023-04-15",
+    "2023-10-24",
+    "2024-04-21",
+    "2024-10-18",
+    "2025-04-16",
+    "2025-08-08",
+    "2025-11-06",
+    "2026-02-16"
+  ],
+  "blocks": [
+    {
+      "start": "2022-03-27",
+      "end": "2022-10-05",
+      "reference_shift_removed_cm": 1.0
+    },
+    {
+      "start": "2022-10-05",
+      "end": "2023-04-15",
+      "reference_shift_removed_cm": 0.56
+    },
+    {
+      "start": "2023-04-15",
+      "end": "2023-10-24",
+      "reference_shift_removed_cm": -2.87
+    },
+    {
+      "start": "2023-10-24",
+      "end": "2024-04-21",
+      "reference_shift_removed_cm": -4.35
+    },
+    {
+      "start": "2024-04-21",
+      "end": "2024-10-18",
+      "reference_shift_removed_cm": 1.12
+    },
+    {
+      "start": "2024-10-18",
+      "end": "2025-04-16",
+      "reference_shift_removed_cm": 0.43
+    },
+    {
+      "start": "2025-04-16",
+      "end": "2025-08-08",
+      "reference_shift_removed_cm": -0.51
+    },
+    {
+      "start": "2025-08-08",
+      "end": "2025-11-06",
+      "reference_shift_removed_cm": -0.18
+    },
+    {
+      "start": "2025-11-06",
+      "end": "2026-02-16",
+      "reference_shift_removed_cm": -1.91
+    }
+  ],
+  "common_reference_window": {
+    "lat": 19.4706,
+    "lon": -99.1344,
+    "half_size_px": 5
+  },
+  "pixels_valid_in_all_blocks_percent": 75.2,
+  "velocity_cm_per_year": {
+    "p2": -20.84,
+    "median": -0.05,
+    "p98": 1.2,
+    "most_common": 0.25
+  },
+  "colour_limits": {
+    "velocity_cm_yr": 25.0,
+    "cumulative_cm": 85.0
+  },
+  "share_of_valid_pixels_percent": {
+    "sinking_faster_than_3_cm_per_year": 29.5,
+    "sinking_faster_than_10_cm_per_year": 15.2
+  },
+  "stable_ground_adjustment": {
+    "offset_subtracted_cm_per_year": 5.75,
+    "method": "the scene's most common LOS velocity from script 22 was subtracted from every pixel; cumulative bands had offset x years subtracted",
+    "assumption": "most pixels in the area are stable ground and the offset is uniform over the area",
+    "independent_gnss_check": {
+      "stations_used": 2,
+      "mean_insar_minus_gnss_before_adjustment_cm_per_year": 6.66,
+      "note": "GNSS was used only to check, not to set, the offset. Few stations; vertical vs line of sight."
+    }
+  }
+}
