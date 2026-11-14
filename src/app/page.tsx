@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MexicoExperience from "@/regions/mexico_city/MexicoExperience";
+import { RegionCards } from "@/regions/mexico_city/ProductFeatures";
 
 export default function Home() {
   return <main className="site-shell space-shell observatory-shell">
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="demo-stamp"><span>FIELD NOTE</span><b>01—01</b><small>OBSERVED FROM SPACE</small></div>
     </section>
     <div id="observation"><MexicoExperience /></div>
+    <RegionCards />
     <footer className="site-footer"><span>TerraWatch · Understand a Changing Planet</span><span>Research preview · Observations are not damage assessments</span></footer>
   </main>;
 }
