@@ -48,6 +48,10 @@ const series = {
   dates,
   bounds_lonlat_west_south_east_north: bounds,
   color_range_cm: [-summary.colour_limits.cumulative_cm, summary.colour_limits.cumulative_cm],
+  velocity_range_cm_per_year: [-summary.colour_limits.velocity_cm_yr, summary.colour_limits.velocity_cm_yr],
+  crs: overlayBounds.crs_of_geotiffs,
+  blocks: summary.blocks,
+  quality_notes: ["Only pixels valid in all processing blocks are retained.", "Atmospheric correction is incomplete; chained blocks can accumulate error.", "GNSS was used only as an independent check; GNSS vertical and InSAR LOS are different measurements."],
   valid_pixel_fraction: summary.pixels_valid_in_all_blocks_percent / 100,
   series_fastest_1pct_cm: dateColumns.map((_, index) => mostSubsiding.reduce((sum, point) => sum + point.cumulative[index], 0) / mostSubsiding.length),
   series_most_sinking_5pct_cm: dateColumns.map((_, index) => mostSubsidingFivePercent.reduce((sum, point) => sum + point.cumulative[index], 0) / mostSubsidingFivePercent.length),
@@ -69,6 +73,9 @@ for (const file of files) {
   }
 }
 await copyFile(path.join(root, "data", "mexico_city", "aoi.geojson"), path.join(output, "aoi.geojson"));
+await copyFile(path.join(pack, "overlay_velocity.png"), path.join(output, "overlay_velocity.png"));
+await copyFile(path.join(pack, "overlay_bounds.json"), path.join(output, "overlay_bounds.json"));
+await copyFile(path.join(pack, "timeseries_points.csv"), path.join(output, "timeseries_points.csv"));
 const contextFiles = ["gnss.json", "gnss_vs_insar_v2.json", "gnss_vs_insar_v3.json", "hillshade_overlay.png", "dem_info.json", "manifest.csv"];
 for (const file of contextFiles) {
   try { await copyFile(path.join(contextSource, file), path.join(output, "context", file)); }

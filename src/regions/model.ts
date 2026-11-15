@@ -24,6 +24,9 @@ export type MexicoSeries = {
   mean_rate_cm_per_year_fastest_1pct: number;
   fastest_pixel_lonlat: [number, number];
   fastest_pixel_final_cm: number;
+  crs?: string;
+  blocks?: { start: string; end: string; reference_shift_removed_cm: number }[];
+  quality_notes?: string[];
 };
 
 export const mexicoLayers: DatasetLayer[] = [

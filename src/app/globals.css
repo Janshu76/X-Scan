@@ -337,3 +337,90 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 600px) { .register-form,.library-metadata { grid-template-columns: 1fr; }.library-dataset>header { display: grid; } }
 
 .nisar-previews { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:10px 0; } .nisar-previews img { width:100%; max-height:150px; object-fit:contain; background:#0b1117; border:1px solid #344153; } .sparkline-wrap>small { display:block; margin-top:4px; color:#aab6c6; font-size:8px; line-height:1.45; }
+
+/* Shared dark map language and the Mexico City Earth Time Machine. */
+.world-map-wrap { background:#0b1017; }
+.world-marker { display:flex; align-items:center; gap:6px; padding:4px 7px; border:0; border-radius:20px; color:#eff2ed; background:rgba(10,15,22,.88); cursor:pointer; font:9px Arial,sans-serif; white-space:nowrap; box-shadow:0 2px 12px #0008; }
+.world-marker-dot { width:11px; height:11px; display:inline-block; border-radius:50%; flex:none; }
+.world-marker-observed .world-marker-dot { background:#f45b46; border:2px solid #ffd18d; box-shadow:0 0 7px 3px #f55d3b99; }
+.world-marker-observed { border:1px solid #ef835e; }
+.world-marker-draft { border:1px dashed #a7bac5; color:#d5dee0; background:#121a22d9; }
+.world-marker-draft .world-marker-dot { border:1px dashed #c9d7df; background:transparent; }
+.world-marker-label { pointer-events:none; }
+.world-map-legend { position:absolute; right:12px; top:13px; z-index:2; display:flex; align-items:center; gap:7px; padding:8px 10px; color:#d0d9e0; border:1px solid #455364; background:#0b111bdc; font-size:8px; }
+.legend-dot { width:9px; height:9px; border-radius:50%; display:inline-block; margin-left:4px; }
+.legend-dot.observed { background:#f45b46; box-shadow:0 0 6px #fa684c; }
+.legend-dot.draft { border:1px dashed #c8d3dc; }
+.home-velocity-legend { position:absolute; left:12px; bottom:48px; z-index:2; display:flex; align-items:center; gap:7px; padding:7px 9px; border:1px solid #526070; background:#0c131de8; color:#e2e6e7; font-size:8px; }
+.home-velocity-legend i { width:64px; height:8px; background:linear-gradient(90deg,#2469bb,#82c4db,#f3e9d7,#f69a64,#c63435); }
+.home-caveat-chip { position:absolute; left:12px; bottom:10px; z-index:2; margin:0; padding:6px 8px; color:#f5d8ac; border:1px solid #755f4b; border-radius:12px; background:#211c18ed; font-size:8px; }
+.home-time-machine-link { position:absolute; right:12px; bottom:12px; z-index:2; padding:8px 10px; border:1px solid #efb779; color:#ffe0b5; background:#151c26e8; font-size:9px; text-decoration:none; }
+.draft-map-popup .maplibregl-popup-content { color:#eef1ee; background:#111a25; font:10px/1.5 Arial,sans-serif; }
+.draft-map-popup .maplibregl-popup-tip { border-top-color:#111a25; border-bottom-color:#111a25; }
+.phase-secondary-link { display:inline-block; margin:12px 0 0 9px; color:#e8bf8c; font-size:10px; }
+.machine-page-intro { padding:12px 0 8px!important; }
+.machine-page-intro h1 { margin:2px 0 0; font-size:clamp(30px,4vw,48px)!important; }
+.earth-time-machine { margin:0 0 16px; padding:14px; border:1px solid #364355; background:linear-gradient(145deg,#111a27,#0d141e); color:#e6e9e8; }
+.machine-header { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:12px; }
+.machine-header .eyebrow { margin:0; color:#d6b080; font-size:8px; letter-spacing:.13em; }
+.machine-header h2 { margin:6px 0 4px; color:#f0eee6; font:clamp(18px,2.4vw,25px) Georgia,serif; font-weight:400; }
+.machine-header p:last-child { margin:0; color:#aeb9c8; font-size:9px; }
+.machine-mode-switch { display:flex; gap:5px; flex:none; }
+.machine-mode-switch button { padding:8px 10px; border:1px solid #4c5b6c; color:#bbc8d1; background:#131e2b; cursor:pointer; font-size:9px; }
+.machine-mode-switch button[aria-pressed="true"] { border-color:#e0b078; color:#ffe0b5; background:#302719; }
+.machine-stage { position:relative; height:clamp(380px,49vw,610px); overflow:hidden; border:1px solid #405064; background:#101820; touch-action:pan-y; }
+.machine-map,.machine-compare-clip { position:absolute; inset:0; width:100%; height:100%; }
+.machine-compare-clip { z-index:1; }
+.machine-map-label { position:absolute; z-index:3; top:12px; left:12px; max-width:48%; padding:8px 10px; border:1px solid #536273; color:#e8edf0; background:#0c131de8; font-size:9px; pointer-events:none; }
+.machine-map-label.right { left:auto; right:12px; text-align:right; }
+.machine-swipe-line { position:absolute; z-index:4; top:0; bottom:0; width:2px; transform:translateX(-1px); background:#ffe0b2; box-shadow:0 0 5px #000; pointer-events:none; }
+.machine-swipe-handle { position:absolute; z-index:5; top:50%; transform:translate(-50%,-50%); width:38px; height:38px; border:1px solid #ffe0b2; border-radius:50%; color:#1a2028; background:#f4c98e; box-shadow:0 2px 14px #000a; cursor:ew-resize; touch-action:none; }
+.machine-layers-button { position:absolute; z-index:6; top:12px; right:12px; padding:8px 10px; border:1px solid #5b6877; color:#e4e9eb; background:#101823ed; cursor:pointer; font-size:9px; }
+.machine-layers { position:absolute; z-index:6; top:48px; right:12px; display:grid; gap:8px; width:min(270px,80vw); max-height:80%; overflow:auto; padding:12px; border:1px solid #556274; color:#e0e5e7; background:#101823f2; box-shadow:0 5px 22px #0009; font-size:9px; }
+.machine-layers>label { display:grid; grid-template-columns:14px 1fr; align-items:start; gap:7px; }
+.machine-layers small { grid-column:2; display:block; color:#d1a77b; font-size:8px; }
+.machine-layers>small { color:#a8b5c0; }
+.machine-inspector { position:absolute; z-index:7; left:12px; bottom:12px; display:grid; gap:5px; max-width:280px; padding:12px; border:1px solid #658075; color:#e2eeea; background:#101d1ded; font-size:9px; }
+.machine-inspector button { position:absolute; top:3px; right:5px; color:#f4e2ca; border:0; background:transparent; cursor:pointer; }
+.machine-error { position:absolute; z-index:7; bottom:8px; left:10px; padding:7px; color:#ffe3d9; background:#412a26; font-size:9px; }
+.machine-legend { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:9px; padding:9px 2px 4px; color:#b8c3cf; font-size:8px; }
+.machine-legend>div { display:flex; align-items:center; gap:7px; }
+.machine-legend i { width:55px; height:8px; background:linear-gradient(90deg,#2469bb,#82c4db,#f3e9d7,#f69a64,#c63435); }
+.machine-legend b { font-weight:400; }
+.machine-caveat-chip { display:inline-block; margin:5px 0 8px; padding:5px 8px; border:1px solid #755f4b; border-radius:12px; color:#f3d4a9; background:#241e19; font-size:8px; }
+.machine-controls { padding:10px 0 5px; border-top:1px solid #303e4e; }
+.machine-control-heading { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.machine-control-heading>div:first-child { display:grid; gap:4px; }
+.machine-control-heading span,.machine-control-heading b { color:#cad3dc; font-size:9px; }
+.machine-control-heading b { color:#f0c18d; font:14px Georgia,serif; }
+.machine-buttons { display:flex; gap:8px; }
+.machine-timeline { position:relative; padding-bottom:28px; }
+.machine-timeline input { display:block; width:100%; margin:13px 0 0; accent-color:#e1ab73; }
+.machine-ticks { position:absolute; top:26px; left:7px; right:7px; height:22px; pointer-events:none; }
+.machine-ticks button { position:absolute; transform:translateX(-50%); max-width:58px; overflow:hidden; padding:2px 0; border:0; color:#9caaba; background:transparent; font-size:7px; white-space:nowrap; cursor:pointer; pointer-events:auto; }
+.machine-ticks button:first-child { transform:none; text-align:left; }
+.machine-ticks button:last-child { transform:translateX(-100%); text-align:right; }
+.machine-ticks button.selected { color:#ffd49d; }
+.machine-compare-date { display:flex; flex-wrap:wrap; align-items:center; gap:9px; padding-top:9px; border-top:1px solid #303e4e; color:#cbd3da; font-size:9px; }
+.machine-compare-date select { padding:6px; border:1px solid #4a5b6e; color:#e5e9e8; background:#121b27; }
+.machine-compare-date span { color:#9caaba; }
+.machine-takeaway { margin:7px 0 0; padding:9px 11px; border-left:2px solid #e6b77c; color:#d9e1e3; background:#151f2b; font-size:10px; }
+.machine-research-details { margin-top:8px; padding:9px 10px; border:1px solid #36475b; color:#d1dae0; font-size:9px; }
+.machine-research-details summary { color:#e7c293; cursor:pointer; }
+.machine-research-details dl { display:grid; grid-template-columns:150px minmax(0,1fr); gap:6px; margin:12px 0 0; }
+.machine-research-details dt { color:#98a8b8; }
+.machine-research-details dd { margin:0; overflow-wrap:anywhere; }
+.machine-intervals { margin-top:12px; padding:13px; border:1px solid #354456; background:#121b27; }
+.machine-intervals>p { color:#aeb9c8; font-size:9px; }
+.machine-rate-bars { display:grid; grid-template-columns:repeat(9,minmax(35px,1fr)); gap:4px; overflow-x:auto; align-items:end; min-height:120px; padding:6px 0; }
+.machine-rate-bars button { display:flex; min-width:45px; flex-direction:column; align-items:center; justify-content:end; gap:4px; padding:4px 1px; border:0; color:#aeb9c8; background:transparent; cursor:pointer; font-size:7px; }
+.machine-rate-bars button>span,.machine-rate-bars button>small { white-space:nowrap; }
+.machine-rate-bars button i { display:block; width:min(20px,70%); min-height:4px; border-radius:3px 3px 0 0; background:#d98d63; }
+.machine-rate-bars button i.positive { background:#78a8bd; }
+.machine-summary-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; margin:12px 0; }
+.machine-summary-cards article { display:grid; align-content:start; gap:7px; padding:12px; }
+.machine-summary-cards .section-kicker { color:#d8b27f; font-size:8px; }
+.machine-summary-cards article>b { color:#e7e9e4; font:16px Georgia,serif; }
+.machine-summary-cards p { margin:0; color:#aeb9c8; font-size:9px; line-height:1.5; }
+.machine-extra-details { margin:16px 0; }
+@media (max-width:700px) { .machine-header { align-items:flex-start; flex-direction:column; }.machine-stage { height:410px; }.machine-summary-cards { grid-template-columns:1fr; }.machine-research-details dl { grid-template-columns:1fr; gap:3px; }.machine-research-details dd { margin-bottom:7px; }.world-map-legend { top:auto; right:8px; bottom:66px; font-size:7px; }.home-velocity-legend { bottom:43px; }.home-caveat-chip { bottom:8px; }.home-time-machine-link { right:8px; bottom:8px; }.machine-map-label { font-size:8px; }.phase-region-shell .topbar nav { gap:7px!important; }.phase-region-shell .topbar nav a { font-size:8px!important; } }
