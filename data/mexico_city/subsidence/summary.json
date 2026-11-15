@@ -1,0 +1,82 @@
+{
+  "source": "OPERA L3 DISP-S1 V1 (NASA/JPL), Sentinel-1 ascending, frame 20688, VV, 30 m",
+  "period": [
+    "2022-03-27",
+    "2026-02-16"
+  ],
+  "dates": [
+    "2022-03-27",
+    "2022-10-05",
+    "2023-04-15",
+    "2023-10-24",
+    "2024-04-21",
+    "2024-10-18",
+    "2025-04-16",
+    "2025-08-08",
+    "2025-11-06",
+    "2026-02-16"
+  ],
+  "blocks": [
+    {
+      "start": "2022-03-27",
+      "end": "2022-10-05",
+      "reference_shift_removed_cm": 1.0
+    },
+    {
+      "start": "2022-10-05",
+      "end": "2023-04-15",
+      "reference_shift_removed_cm": 0.56
+    },
+    {
+      "start": "2023-04-15",
+      "end": "2023-10-24",
+      "reference_shift_removed_cm": -2.87
+    },
+    {
+      "start": "2023-10-24",
+      "end": "2024-04-21",
+      "reference_shift_removed_cm": -4.35
+    },
+    {
+      "start": "2024-04-21",
+      "end": "2024-10-18",
+      "reference_shift_removed_cm": 1.12
+    },
+    {
+      "start": "2024-10-18",
+      "end": "2025-04-16",
+      "reference_shift_removed_cm": 0.43
+    },
+    {
+      "start": "2025-04-16",
+      "end": "2025-08-08",
+      "reference_shift_removed_cm": -0.51
+    },
+    {
+      "start": "2025-08-08",
+      "end": "2025-11-06",
+      "reference_shift_removed_cm": -0.18
+    },
+    {
+      "start": "2025-11-06",
+      "end": "2026-02-16",
+      "reference_shift_removed_cm": -1.91
+    }
+  ],
+  "common_reference_window": {
+    "lat": 19.4706,
+    "lon": -99.1344,
+    "half_size_px": 5
+  },
+  "pixels_valid_in_all_blocks_percent": 75.2,
+  "velocity_cm_per_year": {
+    "p2": -15.09,
+    "median": 5.7,
+    "p98": 6.95,
+    "most_common": 5.75
+  },
+  "colour_limits": {
+    "velocity_cm_yr": 20.0,
+    "cumulative_cm": 60.0
+  }
+}

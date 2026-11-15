@@ -1,0 +1,45 @@
+{
+  "note": "GNSS vertical (up positive, absolute) vs InSAR LOS (relative to a common reference window). Approximate only.",
+  "scene_most_common_velocity_cm_per_year": 5.75,
+  "stations": [
+    {
+      "station": "ICMX",
+      "lat": 19.4056,
+      "lon": -99.17090000000002,
+      "window": [
+        2022.23,
+        2025.92
+      ],
+      "gnss_vertical_cm_per_year": -2.72,
+      "insar_los_cm_per_year": 3.54,
+      "difference_cm_per_year": 6.26,
+      "coverage": "partial overlap"
+    },
+    {
+      "station": "MMX1",
+      "lat": 19.4317,
+      "lon": -99.0684,
+      "window": [
+        2022.23,
+        2026.13
+      ],
+      "gnss_vertical_cm_per_year": -29.88,
+      "insar_los_cm_per_year": -15.5,
+      "difference_cm_per_year": 14.38,
+      "coverage": "full period"
+    },
+    {
+      "station": "MXTX",
+      "lat": 19.5396,
+      "lon": -98.87630000000001,
+      "window": [
+        2022.23,
+        2025.09
+      ],
+      "gnss_vertical_cm_per_year": -1.25,
+      "insar_los_cm_per_year": 5.81,
+      "difference_cm_per_year": 7.06,
+      "coverage": "partial overlap"
+    }
+  ]
+}
